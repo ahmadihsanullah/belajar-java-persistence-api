@@ -8,7 +8,7 @@ public class JpaUtil {
 
     public static EntityManagerFactory getEntityManagerFactory(){
         if(entitiyManagerFactory == null){
-            entitiyManagerFactory = Persistence.createEntityManagerFactory("BELAJARJPA");
+            entitiyManagerFactory = Persistence.createEntityManagerFactory("BELAJAR");
         }
         return entitiyManagerFactory;
     }

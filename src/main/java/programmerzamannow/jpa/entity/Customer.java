@@ -1,6 +1,9 @@
 package programmerzamannow.jpa.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,6 +14,33 @@ public class Customer {
     private String id;
 
     private String name;
+    
+    @Column(name="primary_email")
+    private String primaryEmail;
+
+    private Byte age;
+
+    private Boolean married;
+
+    @Enumerated(EnumType.STRING)
+    private CustomerType type;
+    
+    public CustomerType getType() {
+        return type;
+    }
+
+    public void setType(CustomerType type) {
+        this.type = type;
+    }
+
+    public Byte getAge() {
+        return age;
+    }
+
+    public void setAge(Byte age) {
+        this.age = age;
+    }
+
     
     public String getId() {
         return id;
@@ -27,5 +57,21 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPrimaryEmail() {
+        return primaryEmail;
+    }
+
+    public void setPrimaryEmail(String primaryEmail) {
+        this.primaryEmail = primaryEmail;
+    }
+
+    public Boolean getMarried() {
+        return married;
+    }
+
+    public void setMarried(Boolean married) {
+        this.married = married;
     }
 }
