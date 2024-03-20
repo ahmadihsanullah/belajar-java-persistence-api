@@ -53,3 +53,14 @@ CREATE TABLE departments(
 )
 
 SELECT * FROM departments;
+
+CREATE Table members(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(150) NOT NULL,
+    title VARCHAR(100),
+    first_name VARCHAR(100) NOT NULL,
+    middle_name VARCHAR(100),
+    last_name VARCHAR(100)
+);
+
+SELECT * FROM members;

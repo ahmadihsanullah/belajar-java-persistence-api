@@ -12,6 +12,11 @@
         <class>programmerzamannow.jpa.entity.Customer</class>
         <class>programmerzamannow.jpa.entity.Category</class>
         <class>programmerzamannow.jpa.entity.CustomerType</class>
+        <class>programmerzamannow.jpa.entity.Name</class>
+        <class>programmerzamannow.jpa.entity.Member</class>
+        <class>programmerzamannow.jpa.entity.DepartmendId</class>
+        <class>programmerzamannow.jpa.entity.Departmend</class>
+
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

@@ -2,6 +2,7 @@ package programmerzamannow.jpa;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 import org.junit.jupiter.api.Test;
 
 import jakarta.persistence.EntityManager;
@@ -9,12 +10,35 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import programmerzamannow.jpa.entity.Department;
 import programmerzamannow.jpa.entity.DepartmentId;
+import programmerzamannow.jpa.entity.Member;
+import programmerzamannow.jpa.entity.Name;
 import programmerzamannow.jpa.util.JpaUtil;
 
 public class EmbeddedTest {
-    
     @Test
     void testEmbedded(){
+        EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        Name name = new Name();
+        name.setTitle("Mr");
+        name.setFirstName("Ahmad");
+        name.setMiddleName("Ihsanullah");
+        name.setLastName("Rabbani");
+
+        Member member = new Member();
+        member.setEmail("air@gmail.com");
+        member.setName(name);
+        entityManager.persist(member);
+
+        entityTransaction.commit();
+        entityManager.close();
+    }
+
+    @Test
+    void testEmbeddedMultiplePrimaryKey(){
         EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
