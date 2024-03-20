@@ -26,6 +26,11 @@ CREATE TABLE categories(
     name VARCHAR(100) NOT NULL,
     description VARCHAR(500)
 );
+ALTER TABLE categories
+    ADD COLUMN created_at TIMESTAMP;
+
+ALTER TABLE categories
+    ADD COLUMN updated_at TIMESTAMP;
 
 SELECT * FROM categories;
 
@@ -39,3 +44,12 @@ CREATE TABLE images(
 desc images;
 
 SELECT * FROM images;
+
+CREATE TABLE departments(
+    company_id VARCHAR(100) NOT NULL,
+    department_id VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (company_id, department_id)
+)
+
+SELECT * FROM departments;

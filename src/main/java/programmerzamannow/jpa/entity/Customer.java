@@ -6,6 +6,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "customers")
@@ -24,7 +25,18 @@ public class Customer {
 
     @Enumerated(EnumType.STRING)
     private CustomerType type;
+
+    @Transient
+    private String fullName;
     
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
     public CustomerType getType() {
         return type;
     }
