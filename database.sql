@@ -64,3 +64,29 @@ CREATE Table members(
 );
 
 SELECT * FROM members;
+
+CREATE TABLE hobbies(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    member_id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    FOREIGN KEY fk_members_hobbies (member_id)
+        REFERENCES members(id)
+);
+
+
+SELECT *
+FROM hobbies;
+
+CREATE TABLE skills
+(
+    id        INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    member_id INT          NOT NULL,
+    name      VARCHAR(100) NOT NULL,
+    value     INT          NOT NULL,
+    FOREIGN KEY fk_members_skills (member_id) REFERENCES members (id),
+    CONSTRAINT skills_unique UNIQUE (member_id, name)
+) ENGINE InnoDB;
+
+SELECT * FROM skills;
+
+SELECT * FROM categories;

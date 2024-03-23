@@ -1,20 +1,26 @@
 package programmerzamannow.jpa.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import programmerzamannow.jpa.listener.CreatedAtListener;
+import programmerzamannow.jpa.listener.UpdatedAtListener;
 
 @Entity
 @Table(name = "categories")
-public class Category {
+@EntityListeners({
+    UpdatedAtListener.class,
+    CreatedAtListener.class
+})
+public class Category implements UpdateAtAware, CreatedAtAware{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,9 +29,8 @@ public class Category {
 
     private String description;
 
-    @Temporal(value = TemporalType.TIMESTAMP)
     @Column(name = "created_at")
-    private Calendar createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name="updated_at")
     private LocalDateTime updatedAt;
@@ -54,11 +59,11 @@ public class Category {
         this.description = description;
     }
 
-    public Calendar getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Calendar createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

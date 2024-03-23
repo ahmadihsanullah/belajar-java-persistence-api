@@ -22,7 +22,7 @@ public class DateTest {
 
         Category category = new Category();
         category.setName("Food");
-        category.setCreatedAt(Calendar.getInstance());
+        category.setCreatedAt(LocalDateTime.now());
         category.setUpdatedAt(LocalDateTime.now());
 
         entityManager.persist(category);

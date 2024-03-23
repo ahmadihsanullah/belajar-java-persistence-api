@@ -1,10 +1,19 @@
 package programmerzamannow.jpa.entity;
 
+import java.util.List;
+import java.util.Map;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapKey;
+import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,6 +27,37 @@ public class Member {
 
     @Embedded
     private Name name;
+
+    @ElementCollection
+    @CollectionTable(name = "hobbies", joinColumns = @JoinColumn(
+            name = "member_id", referencedColumnName = "id"
+    ))
+    @Column(name = "name")
+    private List<String> hobbies;
+
+    @ElementCollection
+    @CollectionTable(name = "skills", joinColumns = @JoinColumn(
+        name="member_id", referencedColumnName = "id"
+    ))
+    @MapKeyColumn(name = "name")
+    @Column(name = "value")
+    private Map<String, Integer> skills;
+
+    public Map<String, Integer> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Map<String, Integer> skills) {
+        this.skills = skills;
+    }
+
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = hobbies;
+    }
 
     public Integer getId() {
         return id;
