@@ -18,11 +18,11 @@ public class EnumTest {
         entityTransaction.begin();
 
         Customer customer = new Customer();
-        customer.setId("3");
-        customer.setName("joko");
-        customer.setPrimaryEmail("joko@contoh.com");
+        customer.setId("4");
+        customer.setName("rehan");
+        customer.setPrimaryEmail("rehan@contoh.com");
         customer.setMarried(true);
-        customer.setType(CustomerType.REGULAR);
+        customer.setType(CustomerType.VIP);
         
         entityManager.persist(customer);
 

@@ -23,6 +23,7 @@ public class EntityListener {
         
         Category category = new Category();
         category.setName("bola");
+        category.setDescription("bola besar");
 
         entityManager.persist(category);
 
@@ -40,8 +41,8 @@ public class EntityListener {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         
-        Category category = entityManager.find(Category.class, 4);
-        category.setName("bola kecil");
+        Category category = entityManager.find(Category.class, 7);
+        category.setDescription("pingpong");
 
         entityManager.merge(category);
         

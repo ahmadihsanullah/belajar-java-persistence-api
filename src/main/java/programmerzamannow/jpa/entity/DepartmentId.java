@@ -11,6 +11,9 @@ public class DepartmentId implements Serializable{
     @Column(name = "company_id")
     private String companyId;
 
+    @Column(name = "department_id")
+    private String departmentId;
+    
     public String getCompanyId() {
         return companyId;
     }
@@ -27,6 +30,4 @@ public class DepartmentId implements Serializable{
         this.departmentId = departmentId;
     }
 
-    @Column(name = "department_id")
-    private String departmentId;
 }

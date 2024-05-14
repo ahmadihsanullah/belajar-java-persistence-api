@@ -22,8 +22,8 @@ public class LargeObjectTest {
         entityTransaction.begin();
 
         Image image = new Image();
-        image.setName("teems");
-        image.setDescription("zoom kelas pagi");
+        image.setName("teems 2");
+        image.setDescription("zoom kelas pagi ini");
         byte[] bytes = Files.readAllBytes(Path.of(getClass().getResource("/images/img.png").getPath()));
         image.setImage(bytes);
 

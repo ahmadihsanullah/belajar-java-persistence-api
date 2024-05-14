@@ -44,7 +44,7 @@ public class CRUDTest {
         Customer customer = entityManager.find(Customer.class, "1");
         Assertions.assertNotNull(customer);
         Assertions.assertEquals("1", customer.getId());
-        Assertions.assertEquals("Ahmad", customer.getName());
+        Assertions.assertEquals("Ahmad Ihsanullah", customer.getName());
 
         entityTransaction.commit();
         entityManager.close();

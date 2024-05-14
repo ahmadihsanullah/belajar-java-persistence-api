@@ -11,7 +11,7 @@ import jakarta.persistence.Transient;
 @Entity
 @Table(name = "customers")
 public class Customer {
-    @Id
+    @Id // -> sebagai primary key (wajib ada jika di JPA)
     private String id;
 
     private String name;

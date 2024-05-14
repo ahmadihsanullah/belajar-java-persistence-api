@@ -90,3 +90,13 @@ CREATE TABLE skills
 SELECT * FROM skills;
 
 SELECT * FROM categories;
+
+CREATE TABLE employess(
+    id VARCHAR(100)NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    total_employee INT,
+    total_manager INT
+)
+
+SELECT * FROM employess;

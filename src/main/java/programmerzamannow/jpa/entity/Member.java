@@ -42,7 +42,7 @@ public class Member {
     @CollectionTable(name = "hobbies", joinColumns = @JoinColumn(
             name = "member_id", referencedColumnName = "id"
     ))
-    @Column(name = "name")
+    @Column(name = "name") //-> ini mengarah ke kolom name di table hobbies
     private List<String> hobbies;
 
     @ElementCollection

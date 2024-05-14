@@ -21,11 +21,27 @@ public class DateTest {
         entityTransaction.begin();
 
         Category category = new Category();
-        category.setName("Food");
+        category.setName("Drink");
         category.setCreatedAt(LocalDateTime.now());
         category.setUpdatedAt(LocalDateTime.now());
 
         entityManager.persist(category);
+
+        entityTransaction.commit();
+        entityManager.close();
+    }
+
+    @Test
+    void update() {
+        EntityManagerFactory entityManagerFactory = JpaUtil.getEntityManagerFactory();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        Category category = entityManager.find(Category.class, 6);
+        category.setDescription("Drink....");
+
+        entityManager.merge(category);
 
         entityTransaction.commit();
         entityManager.close();

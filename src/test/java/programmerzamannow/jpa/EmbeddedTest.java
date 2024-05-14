@@ -24,12 +24,12 @@ public class EmbeddedTest {
 
         Name name = new Name();
         name.setTitle("Mr");
-        name.setFirstName("Ahmad");
-        name.setMiddleName("Ihsanullah");
-        name.setLastName("Rabbani");
+        name.setFirstName("Hanif");
+        name.setMiddleName("Hizbulhaq");
+        name.setLastName("");
 
         Member member = new Member();
-        member.setEmail("air@gmail.com");
+        member.setEmail("ahira@gmail.com");
         member.setName(name);
         entityManager.persist(member);
 
@@ -45,12 +45,12 @@ public class EmbeddedTest {
         entityTransaction.begin();
 
         DepartmentId departmentId = new DepartmentId();
-        departmentId.setCompanyId("pzn");
+        departmentId.setCompanyId("air");
         departmentId.setDepartmentId("tech");
 
         Department department = new Department();
         department.setId(departmentId);
-        department.setName("Teknologi");
+        department.setName("Back End");
         entityManager.persist(department);
 
         entityTransaction.commit();

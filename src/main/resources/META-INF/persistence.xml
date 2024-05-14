@@ -16,6 +16,11 @@
         <class>programmerzamannow.jpa.entity.Member</class>
         <class>programmerzamannow.jpa.entity.DepartmendId</class>
         <class>programmerzamannow.jpa.entity.Departmend</class>
+        <class>programmerzamannow.jpa.entity.User</class>
+        <class>programmerzamannow.jpa.entity.Brand</class>
+        <class>programmerzamannow.jpa.entity.Product</class>
+        <class>programmerzamannow.jpa.entity.Credential</class>
+        <class>programmerzamannow.jpa.entity.Product</class>
 
 
         <properties>
@@ -23,8 +28,8 @@
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/belajar_java_persistence_api"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value=""/>
-            <property name="hibernate.show.sql" value="true"/>
-            <property name="hibernate.format.sql" value="true"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>
