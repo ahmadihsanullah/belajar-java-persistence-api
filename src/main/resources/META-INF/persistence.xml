@@ -21,6 +21,7 @@
         <class>programmerzamannow.jpa.entity.Product</class>
         <class>programmerzamannow.jpa.entity.Credential</class>
         <class>programmerzamannow.jpa.entity.Product</class>
+        <class>programmerzamannow.jpa.entity.Payment</class>
 
 
         <properties>

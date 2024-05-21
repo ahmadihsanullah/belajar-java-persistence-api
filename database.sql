@@ -100,3 +100,66 @@ CREATE TABLE employess(
 )
 
 SELECT * FROM employess;
+
+
+CREATE TABLE payments(
+    id VARCHAR(100) NOT NULL PRIMARY KEY,
+    amount BIGINT NOT NULL
+);
+
+CREATE TABLE payments_credit_card(
+    id VARCHAR(100) NOT NULL PRIMARY KEY,
+    masked_card VARCHAR(100) NOT NULL,
+    bank VARCHAR(100) NOT NULL,
+    FOREIGN KEY fk_payments_credit_card (id) REFERENCES payments(id)
+);
+
+CREATE TABLE payments_gopay(
+    id VARCHAR(100) NOT NULL PRIMARY KEY,
+    gopay_id VARCHAR(100) NOT NULL,
+    FOREIGN KEY fk_payments_gopay (id) REFERENCES payments(id)
+);
+
+CREATE Table transactions(
+    id VARCHAR(100) NOT NULL PRIMARY KEY,
+    balance BIGINT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+SELECT * FROM transactions;
+
+
+CREATE Table transactions_debit(
+    id VARCHAR(100) NOT NULL PRIMARY KEY,
+    balance BIGINT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    debit_amount BIGINT NOT NULL
+);
+
+SELECT * FROM transactions_debit;
+
+
+CREATE Table transactions_credit(
+    id VARCHAR(100) NOT NULL PRIMARY KEY,
+    balance BIGINT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    credit_amount BIGINT NOT NULL
+);
+
+SELECT * FROM transactions_credit
+
+ALTER TABLE brands
+    ADD COLUMN created_at TIMESTAMP;
+
+ALTER TABLE brands
+    ADD COLUMN updated_at TIMESTAMP; 
+
+
+
+SELECT * FROM brands ;
+
+ALTER TABLE brands
+ADD COLUMN version BIGINT;
+
+SHOW TABLES;
+
