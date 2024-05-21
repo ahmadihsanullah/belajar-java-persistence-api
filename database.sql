@@ -163,3 +163,6 @@ ADD COLUMN version BIGINT;
 
 SHOW TABLES;
 
+SELECT * from members;
+
+select * from members where  first_name COLLATE utf8mb4_bin = 'ahmad';

@@ -13,9 +13,17 @@ public class Name {
 
     @Column(name= "middle_name")
     private String middleName;
-    
+
     @Column(name="last_name")
-    private String LastName;
+    private String lastName;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public String getTitle() {
         return title;
@@ -41,11 +49,5 @@ public class Name {
         this.middleName = middleName;
     }
 
-    public String getLastName() {
-        return LastName;
-    }
 
-    public void setLastName(String lastName) {
-        LastName = lastName;
-    }
 }
