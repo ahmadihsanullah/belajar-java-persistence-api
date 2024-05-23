@@ -166,3 +166,20 @@ SHOW TABLES;
 SELECT * from members;
 
 select * from members where  first_name COLLATE utf8mb4_bin = 'ahmad';
+
+select * from users;
+
+select * from products;
+
+insert  into products values('p3', 'xiomi','Xiomi 2', 1000000, '');
+
+insert  into products values('p4', 'xiomi','Xiomi 2 ', 2000000, '');
+select * from products;
+
+select * from users_like_products;
+
+select u.name, ulp.product_id, p.name from users u join users_like_products ulp join products p
+    where u.id = 'ahmad';
+
+select p.name, users.id from products p join users where users.id='ahmad';
+

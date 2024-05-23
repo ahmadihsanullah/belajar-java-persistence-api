@@ -2,7 +2,9 @@ package programmerzamannow.jpa;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -137,11 +139,9 @@ public class RelationshipTest {
 
         Product product1 = entityManager.find(Product.class, "p1");
         Product product2 = entityManager.find(Product.class, "p2");
-
         user.getLikes().add(product1);
         user.getLikes().add(product2);
-
-        entityManager.merge(user);
+        entityManager.persist(user);
 
         entityTransaction.commit();
         entityManager.close();
